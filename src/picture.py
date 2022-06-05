@@ -57,7 +57,14 @@ class Picture:
 
 
   def up(self, p):
-    return Picture(None)
+    """Devuelve una nueva figura poniendo la figura recibida
+       como argumento, encima de la figura actual"""
+    imagenActual = self.img
+    imagenArriba = p.img
+    imagenMontada = []
+    imagenMontada.extend(imagenArriba) #Añade todas las cadenas de imagenArriba a la variable imagenMontada
+    imagenMontada.extend(imagenActual) #Añade todas las cadenas de imagenActual a la variable imagenMontada
+    return Picture(imagenMontada)#Se retorna un objeto picture que contiene a imagenArriba arriba de imagenActual 
 
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la
