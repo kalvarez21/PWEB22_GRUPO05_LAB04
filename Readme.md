@@ -47,9 +47,68 @@
 </tr></tbody></table></div>
    <h1>SOLUCION Y RESULTADOS</h1>
    <h2>I. SOLUCION DE EJERCICIOS/PROBLEMAS</h2>
-   <ul>
-    <li></li>
-   </ul>
+   <h3>DESARROLLO DE FUNCIONES</h3> 
+   
+   - NOTA: En el archivo TestingFunciones.py podra probar el funcionamiento de cada una de las siguientes funciones
+   - Funcion verticalMirror: Se basa en ir almacenando los Strings del array que contiene la imagen actual en otro, solo que se empieza desde el ultimo y se va retrocediendo.
+  ```sh
+    draw(knight.verticalMirror())
+  ```
+  <img src="https://i.ibb.co/5R8B2ft/caballo-Reflejo-Vertical.png">
+  
+  - Funcion HorizontallMirror: Se basa en invertir cada String del array que contiene la imagen actual e ir almacenandolos en otro. Ya que en python los Strings se comportan con arrays es posible usar el artilugio de la linea 32 para reducir el codigo [4]
+  ```sh
+    str = x[::-1]
+  ```
+  - Probando la funcion:
+  ```sh
+    draw(knight.horizontalMirror())
+  ```
+  <img src="https://i.ibb.co/KrS8vCn/caballo-Reflejo-Horizontal.png">
+  	
+  - Funcion negative: Se basa en evaluar cada uno de los caracteres y convertirlo en su inverso definido en el array inverter del archivo color.py. En caso de no encontrarse tal caracter en este array no se generara la conversion
+  ```sh
+    draw(knight.negative())
+  ```
+  <img src="https://i.ibb.co/xmyz8V0/caballo-Invertido.png">
+  
+  - Funcion join: Se basa en concatenar el String x de la imagen Actual con la segunda imagen.
+  ```sh
+    draw(knight.join(rock))
+  ```
+  <img src="https://i.ibb.co/jrN51py/caballo-Torre-Unidos.png">
+  
+  - Funcion up: Se basa en almacenar en un array auxiliar primero todos los elementos del array de la segunda imagen y luego los de la imagen actual
+  ```sh
+    draw(knight.up(rock))
+  ```
+  <img src="https://i.ibb.co/QfqkTZ9/torre-Arriba-Caballo.png">
+  
+  - Funcion under: Se basa en evaluar cada caracter de la segunda imagen, en caso de que sea un espacio vacio se reemplaza con el caracter en la misma posicion de la  imagen actual, caso contrario se mantiene el caracter de la segunda imagen intacta.
+  ```sh
+    draw(square.under(knight)) #caballo sobre la casilla
+  ```
+  <img src="https://i.ibb.co/G0N3Yw2/caballo-Sobre-Casilla.png">
+  
+  - Funcion horizontalRepeat: En python el operador * tambien trabaja con strings, haciendo que se repita las veces que uno desea. Para esta funcion se uso este operador en cada cadena de la imagen actual para luego almacenarlas  
+  ```sh
+    draw(knight.horizontalRepeat(5))
+  ```
+  <img src="https://i.ibb.co/bB1typ6/caballo-Repetido-H.png">
+  
+  - Funcion verticalRepeat: Se basa en almacenar n veces el conjunto de arrays de la imagen actual en un array auxiliar
+  ```sh
+    draw(knight.verticalRepeat(5))
+  ```
+  <img src="https://i.ibb.co/TmwnzBw/caballo-Repetido-V.png">
+  
+  - Funcion rotateAntihorario: Se basa en concatenar todos los caracteres de la columna x (iniciando en la primera fila)y almacenarlos en un array auxliar. El recorrido de las columnas se hara desde el ultimo al primero.
+  - Funcion rotateHorario: Se basa en concatenar todos los caracteres de la columna x (iniciando desde la ultima fila)y almacenarlos en un array auxliar. El recorrido de las columnas se hara desde el primero al ultimo.
+  ```sh
+      draw(knight.rotateAntihorario().join(knight.rotateHorario()))
+  ```
+  <img src="https://i.ibb.co/FqfPLbN/caballos-Rotados.png">
+  
    <h2>II. SOLUCION DE CUESTIONARIO</h2>
    <ul>
       <li>¿Qué son los archivos *.pyc?</li>
@@ -63,13 +122,12 @@
    </ul>
    <h1>RETROALIMENTACION GENERAL</h1>
    <h1>REFERENCIA Y BIBLIOGRAFIA</h1>
-   <b><i>https://www.w3schools.com/python/python_reference.asp</i></b>
-   <b><i>https://docs.python.org/3/tutorial/</i></b>   
+   <b><i>[1] https://www.w3schools.com/python/python_reference.asp</i></b><br>
+   <b><i>[2] https://docs.python.org/3/tutorial/</i></b><br>   
+   <b><i>[3] https://es.stackoverflow.com/questions/225847/como-instalar-pygame-en-python3-con-pip</i></b><br>  
+   <b><i>[4] https://stackoverflow.com/questions/3940128/how-to-reverse-a-list</i></b>
 
 #
-
-[license]: https://img.shields.io/github/license/rescobedoq/pw2?label=rescobedoq
-[license-file]: https://github.com/rescobedoq/pw2/blob/main/LICENSE
 
 [downloads]: https://img.shields.io/github/downloads/rescobedoq/pw2/total?label=Downloads
 [releases]: https://github.com/rescobedoq/pw2/releases/
