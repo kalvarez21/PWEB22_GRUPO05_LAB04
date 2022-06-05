@@ -47,7 +47,7 @@
 </tr></tbody></table></div>
    <h1>SOLUCION Y RESULTADOS</h1>
    <h2>I. SOLUCION DE EJERCICIOS/PROBLEMAS</h2>
-   <h3>DESARROLLO DE FUNCIONES</h3> 
+   <h3>EJERCICIO 01 : DESARROLLO DE FUNCIONES</h3> 
    
    - NOTA: En el archivo TestingFunciones.py podra probar el funcionamiento de cada una de las siguientes funciones
    - Funcion verticalMirror: Se basa en ir almacenando los Strings del array que contiene la imagen actual en otro, solo que se empieza desde el ultimo y se va retrocediendo.
@@ -108,6 +108,101 @@
       draw(knight.rotateAntihorario().join(knight.rotateHorario()))
   ```
   <img src="https://i.ibb.co/FqfPLbN/caballos-Rotados.png">
+  
+  <h3>EJERCICIO 02: RESOLUCION</h3> 
+  - FIGURA a: figura1 contendra el caballo blanco unido al caballo negro. figura2 contendra el caballo negro unido al caballo blanco. Se finalizara dibujando figura1 sobre figura2.
+  
+  ```sh
+  figura1 = knight.join(knight.negative())
+  figura2 = knight.negative().join(knight)
+  draw(figura2.up(figura1))
+  ```
+  <img src="https://i.ibb.co/kBRzGjS/figura2a.png">
+  
+  - FIGURA b: figura1 contendra el caballo blanco unido al caballo negro. figura2 contendra el reflejo horizontal de figura1 . Se finalizara dibujando figura1 sobre figura2.
+  
+  ```sh
+  figura1 = knight.join(knight.negative())
+  figura2 = figura1.horizontalMirror()
+  draw(figura2.up(figura1))
+  ```
+  <img src="https://i.ibb.co/RBZ1JP3/figura2b.png">
+  
+  - FIGURA c: Reinas contendra las 4 reinas. Se finaliza dibujando reinas.
+  
+  ```sh
+  reinas = queen.horizontalRepeat(4)
+  draw(reinas)
+  ```
+  <img src="https://i.ibb.co/LrWrnzB/figura2c.png">
+  
+  - FIGURA d: fila contendra la union de una casilla blanca y una negra repetida 4 veces
+  
+  ```sh
+  fila = square.join(square.negative()).horizontalRepeat(4)
+  draw(fila)
+  ```
+  <img src="https://i.ibb.co/Wsss6N0/figura2d.png">
+  
+  - FIGURA e: fila2 contendra la union de una casilla negra y una blanca repetida 4 veces
+  
+  ```sh
+  fila2 = square.negative().join(square).horizontalRepeat(4)
+  draw(fila2)
+  ```
+  <img src="https://i.ibb.co/n6gzKv8/figura2e.png">
+  
+  - FIGURA f: fila contendra la figurad y fila2 contendra la figurae. unirFilas contendra fila arriba de fila2. Se finaliza dibujando unirFilas repetida verticalmente 2 veces 
+  
+  ```sh
+  fila = square.join(square.negative()).horizontalRepeat(4)
+  fila2 = square.negative().join(square).horizontalRepeat(4)
+  unirFilas = fila2.up(fila)
+  draw(unirFilas.verticalRepeat(2))
+  ```
+  <img src="https://i.ibb.co/WKhPJyv/figura2f.png">
+  
+  - FIGURA g: El ejercicio se dividio en pasos:
+    - Fichas blancas: Se prepara la imagen que contendra todas las fichas blancas. Para ello en fichasEspecialesBlancas se almacena las fichas que no sean peones segun el orden establecido uniendoles con la funcion join. En peones se almaacenara la figura pawn(peon) repetida 8 veces. Por ultimo en fichasBlancas se juntaran todas las fichas colocando peones arriba de fichasEspecialesBlancas.
+    - Fichas Negras: Se prepara la imagen que contendra todas las fichas negras. Para ello en fichasEspecialesNegras se almacena fichasEspecialesBlancas pero con el color invertido. En peonesNgros se almacena peones pero con el color invertido. Por ultimo en fichasNegras se juntaran todas las fichas colocando peonesNegros arriba de fichasEspecialesNegras.
+    - Par de fila: Se repite el paso hecho para obtener unirFilas en el ejercicioF. 
+    - Tablero: Se divide en tres zonas necesarias para su formacion: zonaFichasNegras, zonaFichasBlancas y zonaMedia.
+      - ZonaFichasNegras: Se coloca fichasNegras encima de unirFilas.
+      - ZonaFichasBlancas: Se coloca fichasBlancas encima de unirFilas
+      - ZonaMedia : Se repite verticalmente unirFilas 2 veces.
+    - Se finaliza juntando ZonaFichasNegras arriba de zonaMedia, y esta nueva imagen formada arriba de ZonaFichasBlancas. Luego se procede a dibujar.
+  
+  ```sh
+  # Fichas blancas
+  fichasEspecialesBlancas = rock.join(knight).join(bishop)
+  fichasEspecialesBlancas = fichasEspecialesBlancas.join(queen).join(king)
+  fichasEspecialesBlancas = fichasEspecialesBlancas.join(bishop).join(knight).join(rock)
+  peones = pawn.horizontalRepeat(8)
+  fichasBlancas = fichasEspecialesBlancas.up(peones)
+  #draw(fichasBlancas)
+
+  # Fichas Negras
+  fichasEspecialesNegras = fichasEspecialesBlancas.negative()
+  peonesNegros = peones.negative()
+  fichasNegras = peonesNegros.up(fichasEspecialesNegras)
+  #draw(fichasNegras)
+
+  # Par de Filas
+  fila = square.join(square.negative()).horizontalRepeat(4)
+  fila2 = square.negative().join(square).horizontalRepeat(4)
+  unirFilas = fila2.up(fila)
+  # draw(unirFilas)
+
+  # tablero
+  zonaFichasNegras = unirFilas.under(fichasNegras)
+  zonaFichasBlancas = unirFilas.under(fichasBlancas)
+  zonaMedia = unirFilas.verticalRepeat(2)
+  tablero = zonaFichasBlancas.up(zonaMedia).up(zonaFichasNegras)
+  draw(tablero)
+  ```
+  <img src="https://i.ibb.co/74HH6JT/figura2g.png">
+  
+  
   
    <h2>II. SOLUCION DE CUESTIONARIO</h2>
    <ul>
