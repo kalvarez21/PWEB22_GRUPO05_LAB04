@@ -164,7 +164,7 @@
   
   - FIGURA g: El ejercicio se dividio en pasos:
     - Fichas blancas: Se prepara la imagen que contendra todas las fichas blancas. Para ello en fichasEspecialesBlancas se almacena las fichas que no sean peones segun el orden establecido uniendoles con la funcion join. En peones se almaacenara la figura pawn(peon) repetida 8 veces. Por ultimo en fichasBlancas se juntaran todas las fichas colocando peones arriba de fichasEspecialesBlancas.
-    - Fichas Negras: Se prepara la imagen que contendra todas las fichas negras. Para ello en fichasEspecialesNegras se almacena fichasEspecialesBlancas pero con el color invertido. En peonesNgros se almacena peones pero con el color invertido. Por ultimo en fichasNegras se juntaran todas las fichas colocando peonesNegros arriba de fichasEspecialesNegras.
+    - Fichas Negras: Se prepara la imagen que contendra todas las fichas negras. Para ello en fichasEspecialesNegras se almacena fichasEspecialesBlancas pero con el color invertido. En peonesNgros se almacena peones pero con el color invertido. Por ultimo en fichasNegras se juntaran todas las fichas colocando fichasEspecialesNegras arriba de peonesNegros.
     - Par de fila: Se repite el paso hecho para obtener unirFilas en el ejercicioF. 
     - Tablero: Se divide en tres zonas necesarias para su formacion: zonaFichasNegras, zonaFichasBlancas y zonaMedia.
       - ZonaFichasNegras: Se coloca fichasNegras encima de unirFilas.
@@ -205,15 +205,75 @@
   
   
    <h2>II. SOLUCION DE CUESTIONARIO</h2>
-   <ul>
-      <li>¿Qué son los archivos *.pyc?</li>
-      <li>¿Para qué sirve el directorio pycache?</li>
-      <li>¿Cuáles son los usos y lo que representa el subguión en Python?</li>
-   </ul>
+   
+   - ¿Qué son los archivos .pyc?
+     - A pesar de que Python es un lenguaje interpretado puede compilar ciertos paquetes incluidos en un programa de Python cuando se ejecuta el programa, lo que aumenta la velocidad de ejecución y la eficiencia. Esto demuestra muchas ventajas siempre que el código fuente del módulo no cambie, por lo que el intérprete de Python no interpretara el módulo cada vez que un programa se ejecuta. Más bien, se utilizará la versión "listo" del código. Esto disminuye la sobrecarga utilizado por interpretación continua de los mismos archivos de origen.
+   - ¿Para qué sirve el directorio pycache?
+     - Cuando se compila un archivo de python, el producto lo guarda en esta carpeta en formato de codigo de bytes. Por ejemplo, durante la resolucion de este laboratorio, los distintos archivos que se utlizaron (tales como picture.py) tienen su archivo compilado almacenado en esta carpeta con la terminacion *.cpython-39.pyc. Ejemplo: picture.cpython-39.pyc 
+   - ¿Cuáles son los usos y lo que representa el subguión en Python?
+     - El intérprete python almacena el valor de la última expresión usada en una variable especial llamada _. Por ejemplo, utilizando el interpretante en modo interactivo: 
+     ```sh
+      Python 2.7.13 (default, Jan 19 2017, 14:48:08)
+      [GCC 6.3.0 20170118] on linux2
+      Type "help", "copyright", "credits" or "license" for more information.
+      >>> 5
+      5
+      >>> _
+      5
+      >>> _ * 3
+      15
+      >>> _
+      15
+      >>> _ + 7
+      22
+      >>> _
+      22
+     ```
+     - Se puede utilizar el guión bajo para separar los dígitos de los números para lograr una mayor legibilidad.
+     ```sh
+      x_dec = 6_543_210
+      y_hex = 0x_1234_abcd # 0x es el prefijo para indicar que es un numero hexadecimal
+
+      print(x_dec) # 6543210
+      print(y_hex) # 305441741
+     ```
+     
+     - El _ se puede utilizar como un nombre desechable. Si no necesitas algunos valores específicos o si los valores no se utilizan, sólo hay que asignar los valores al guión bajo y estos valores serán ignorados. Por ejemplo:
+     ```sh
+      # Ignorar un valor al desempaquetar
+      x, _, y = (1, 2, 3)
+      print(x) # x = 1
+      print(y) # y = 3
+
+      # Desempaque extendido: ignora varios valores. Disponible solo en Python 3.x
+      x, *_, y = (1, 2, 3, 4, 5)
+      print(x) # x = 1
+      print(y) # y = 5
+     ```
+     
+     - El _ se puede utilizar como un nombre desechable. Si no necesitas algunos valores específicos o si los valores no se utilizan, sólo hay que asignar los valores al guión bajo y estos valores serán ignorados. Por ejemplo:
+     ```sh
+      # Ignorar un valor al desempaquetar
+      x, _, y = (1, 2, 3)
+      print(x) # x = 1
+      print(y) # y = 3
+
+      # Desempaque extendido: ignora varios valores. Disponible solo en Python 3.x
+      x, *_, y = (1, 2, 3, 4, 5)
+      print(x) # x = 1
+      print(y) # y = 5
+     ```
+     
+     - El guión bajo es más utilizado en "nombrar" variables o funciones. Por el PEP8, que es la guía de convenciones recomendadas para Python, se indican los siguientes 3 casos de nomenclatura:
+       - Un solo guión bajo Después de un nombre (por ejemplo spam_) : Evita conflictos con keywords de Python
+       - Un solo guión bajo Antes de un nombre (por ejemplo _spam) : Un convencion utilizada para indicar que la variable es privada o interna
+       - Un doble guión bajo Antes y Después de un nombre (por ejemplo __spam__) : Indican que un metodo es especial, por ejemplo, el metodo __init__ usado en este laboratorio
+
    <h2>III. CONCLUSIONES</h2>
    <ul>
-      <li></li>
-      <li></li>
+      <li>Python es un lenguaje facil de aprender e ideal para aquellos programadores que se estan iniciando. Este lenguaje de programación permite una diversidad de desarrollo de una manera fácil, ágil y rápida.</li>
+      <li>Python presenta funciones que facilitan mucho el manejo de Strings y Arrays</li>
+  
    </ul>
    <h1>RETROALIMENTACION GENERAL</h1>
    <h1>REFERENCIA Y BIBLIOGRAFIA</h1>
@@ -221,7 +281,8 @@
    <b><i>[2] https://docs.python.org/3/tutorial/</i></b><br>   
    <b><i>[3] https://es.stackoverflow.com/questions/225847/como-instalar-pygame-en-python3-con-pip</i></b><br>  
    <b><i>[4] https://stackoverflow.com/questions/3940128/how-to-reverse-a-list</i></b>
-
+   <b><i>[5] https://www.pythonmania.net/es/2017/03/05/guion-bajo-en-python/</i></b>
+   
 #
 
 [downloads]: https://img.shields.io/github/downloads/rescobedoq/pw2/total?label=Downloads
