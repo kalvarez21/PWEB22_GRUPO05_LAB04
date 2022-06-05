@@ -13,17 +13,23 @@ class Picture:
 
   def verticalMirror(self):
     """ Devuelve el espejo vertical de la imagen """
-    imagenActual = self.img
-    reflejoVertical = []
-    max = len(self.img) - 1
+    imagenActual = self.img #Se almacena el array de cadenas en imagenActual
+    reflejoVertical = [] #Array auxiliar que contendra la imagen invertida verticalmente (en cadenas)
+    max = len(self.img) - 1 #Contador auxiliar
     while max >= 0:
-      reflejoVertical.append(imagenActual[max])
+      reflejoVertical.append(imagenActual[max])#Almacena en reflejoVertical las cadenas de imagenActual empezando desde la ultima
       max -= 1
-    return Picture(reflejoVertical)
+    return Picture(reflejoVertical)#Se retorna un objeto picture que contiene a la imagen invertida verticalmente (en cadenas)
 
   def horizontalMirror(self):
     """ Devuelve el espejo horizontal de la imagen """
-    return Picture(None)
+    imagenActual = self.img
+    reflejoHorizontal = [] #Array auxiliar que contendra la imagen invertida horizontalmente (en cadenas)
+    str = "" # variable String auxiliar
+    for x in self.img:# Recorrera cada elemento String de imagenActual
+      str = x[::-1] #Invierte la cadena x y lo almacena en str
+      reflejoHorizontal.append(str)# Almacena la cadena str en el arrat reflejoHorizontal
+    return Picture(reflejoHorizontal)#Se retorna un objeto picture que contiene a la imagen invertida horizontalmente (en cadenas)
 
   def negative(self):
     """ Devuelve un negativo de la imagen """
