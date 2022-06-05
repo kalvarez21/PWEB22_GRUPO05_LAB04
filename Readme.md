@@ -25,12 +25,12 @@
    <tbody><tr><th colspan="6">INFORMACIÓN BÁSICA</th></tr>
    </tbody><tbody>
    <tr><td>ASIGNATURA:</td><td colspan="5">Programación Web 2</td></tr>
-   <tr><td>TÍTULO DE LA PRÁCTICA: </td><td colspan="5">Ajax y NodeJS</td></tr>
+   <tr><td>TÍTULO DE LA PRÁCTICA: </td><td colspan="5">Python</td></tr>
    <tr>
-   <td>NÚMERO DE PRÁCTICA:</td><td>03</td><td>AÑO LECTIVO:</td><td>2022 A</td><td>NRO. SEMESTRE:</td><td>III</td>
+   <td>NÚMERO DE PRÁCTICA:</td><td>04</td><td>AÑO LECTIVO:</td><td>2022 A</td><td>NRO. SEMESTRE:</td><td>III</td>
    </tr>
    <tr>
-   <td>FECHA Presentacion:</td><td>15-May-2022</td><td>Hora de Presentacion:</td><td colspan="3">23:55</td>
+   <td>FECHA Presentacion:</td><td>05-Jun-2022</td><td>Hora de Presentacion:</td><td colspan="3">23:55</td>
    </tr>
    <tr><td colspan="3">Integrantes:
    <ul dir="auto">
@@ -52,10 +52,9 @@
    </ul>
    <h2>II. SOLUCION DE CUESTIONARIO</h2>
    <ul>
-      <li>En el Ejemplo "Hola Mundo" con NodeJS. ¿Qué pasó con la línea: "Content type ….."?</li>
-      <li>En los ejercicios. ¿En qué lugar debería estar el archivo poema.txt</li>
-      <li>¿Entiende la expresión regular en el código y se da cuenta de para qué es útil?</li>
-      <li>Note que la respuesta del servidor está en formato JSON, ¿Habrá alguna forma de verla directamente?</li>
+      <li>¿Qué son los archivos *.pyc?</li>
+      <li>¿Para qué sirve el directorio pycache?</li>
+      <li>¿Cuáles son los usos y lo que representa el subguión en Python?</li>
    </ul>
    <h2>III. CONCLUSIONES</h2>
    <ul>
@@ -64,4 +63,42 @@
    </ul>
    <h1>RETROALIMENTACION GENERAL</h1>
    <h1>REFERENCIA Y BIBLIOGRAFIA</h1>
-   <b><i></i></b>
+   <b><i>https://www.w3schools.com/python/python_reference.asp</i></b>
+   <b><i>https://docs.python.org/3/tutorial/</i></b>   
+
+#
+
+[license]: https://img.shields.io/github/license/rescobedoq/pw2?label=rescobedoq
+[license-file]: https://github.com/rescobedoq/pw2/blob/main/LICENSE
+
+[downloads]: https://img.shields.io/github/downloads/rescobedoq/pw2/total?label=Downloads
+[releases]: https://github.com/rescobedoq/pw2/releases/
+
+[last-commit]: https://img.shields.io/github/last-commit/rescobedoq/pw2?label=Last%20Commit
+
+[Debian]: https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white
+[debian-site]: https://www.debian.org/index.es.html
+
+[Git]: https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white
+[git-site]: https://git-scm.com/
+
+[GitHub]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
+[github-site]: https://github.com/
+
+[Vim]: https://img.shields.io/badge/VIM-%2311AB00.svg?style=for-the-badge&logo=vim&logoColor=white
+[vim-site]: https://www.vim.org/
+
+[Java]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white
+[java-site]: https://docs.oracle.com/javase/tutorial/
+
+
+[![Debian][Debian]][debian-site]
+[![Git][Git]][git-site]
+[![GitHub][GitHub]][github-site]
+[![Vim][Vim]][vim-site]
+[![Java][Java]][java-site]
+
+
+[![License][license]][license-file]
+[![Downloads][downloads]][releases]
+[![Last Commit][last-commit]][releases]
