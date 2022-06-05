@@ -11,6 +11,7 @@ class Picture:
       return color
     return inverter[color]
 
+
   def verticalMirror(self):
     """ Devuelve el espejo vertical de la imagen """
     imagenActual = self.img #Se almacena el array de cadenas en imagenActual
@@ -19,7 +20,8 @@ class Picture:
     while max >= 0:
       reflejoVertical.append(imagenActual[max])#Almacena en reflejoVertical las cadenas de imagenActual empezando desde la ultima
       max -= 1
-    return Picture(reflejoVertical)#Se retorna un objeto picture que contiene a la imagen invertida verticalmente (en cadenas)
+    return Picture(reflejoVertical)#Se retorna un objeto picture que contiene a la imagen invertida verticalmente
+
 
   def horizontalMirror(self):
     """ Devuelve el espejo horizontal de la imagen """
@@ -29,7 +31,8 @@ class Picture:
     for x in self.img:# Recorrera cada elemento String de imagenActual
       str = x[::-1] #Invierte la cadena x y lo almacena en str
       reflejoHorizontal.append(str)# Almacena la cadena str en el arrat reflejoHorizontal
-    return Picture(reflejoHorizontal)#Se retorna un objeto picture que contiene a la imagen invertida horizontalmente (en cadenas)
+    return Picture(reflejoHorizontal)#Se retorna un objeto picture que contiene a la imagen invertida horizontalmente
+
 
   def negative(self):
     """ Devuelve un negativo de la imagen """
@@ -39,12 +42,19 @@ class Picture:
       for y in self.img[x]: # Recorrera cada carater de la cadena
         str += self._invColor(y) #Convierte cada caracter a su inverso y lo concatena a str
       imagenNegativa.append(str) # cada cadena invertida lo añade en imagenNegativa
-    return Picture(imagenNegativa)#Se retorna un objeto picture que contiene a la imagen negativa(en cadenas)
+    return Picture(imagenNegativa)#Se retorna un objeto picture que contiene a la imagen negativa
+
 
   def join(self, p):
     """ Devuelve una nueva figura poniendo la figura del argumento
         al lado derecho de la figura actual """
-    return Picture(None)
+    imagenActual = self.img
+    segundaImagen = p.img
+    imagenesUnidas = [] #Array auxiliar que contendra la imagenes unidas (actual - secundaria)
+    for x in range(len(self.img)):
+      imagenesUnidas.append(imagenActual[x] + segundaImagen[x])#Concatena las cadenas x de los arrays imagenActual e segundaImagen
+    return Picture(imagenesUnidas)#Se retorna un objeto picture que contiene a las imagenes unidas
+
 
   def up(self, p):
     return Picture(None)
