@@ -66,6 +66,7 @@ class Picture:
     imagenMontada.extend(imagenActual) #Añade todas las cadenas de imagenActual a la variable imagenMontada
     return Picture(imagenMontada)#Se retorna un objeto picture que contiene a imagenArriba arriba de imagenActual
 
+
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la
         figura actual """
@@ -82,10 +83,15 @@ class Picture:
       resultado.append(str)# almacena la cadena formada en resultado
     return Picture(resultado)#Se retorna un objeto picture que contiene a imagenSobre sobre imagenActual
 
+
   def horizontalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual al costado
         la cantidad de veces que indique el valor de n """
-    return Picture(None)
+    imagenRepetida = []
+    for x in range (0, len(self.img)):# Recorre cada cadena de la imagenActual
+        imagenRepetida.append(self.img[x]* n)# Repite cada cadena n veces (las concatena) y las almacena en imagenRepetida
+    return Picture(imagenRepetida)#Se retorna un objeto picture que contiene la imagen repetida n veces horizontalmente
+
 
   def verticalRepeat(self, n):
     return Picture(None)
