@@ -94,7 +94,10 @@ class Picture:
 
 
   def verticalRepeat(self, n):
-    return Picture(None)
+    repetidaVertical = []
+    for x in range(n):# Se hara n iteraciones
+      repetidaVertical.extend(self.img) #Se almacenena todas las cadenas de la imagen actual en repetidaVertical
+    return Picture(repetidaVertical)#Se retorna un objeto picture que contiene la imagen repetida n veces verticalmente
 
   #Extra: Sólo para realmente viciosos
   def rotate(self):

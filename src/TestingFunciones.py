@@ -6,4 +6,5 @@ from chessPictures import *
 #draw(knight.join(rock))
 #draw(knight.up(rock))
 #draw(square.under(knight)) #caballo sobre la casilla
-draw(knight.horizontalRepeat(5))
+#draw(knight.horizontalRepeat(5))
+draw(knight.verticalRepeat(5))
