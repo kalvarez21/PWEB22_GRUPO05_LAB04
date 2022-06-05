@@ -33,7 +33,13 @@ class Picture:
 
   def negative(self):
     """ Devuelve un negativo de la imagen """
-    return Picture(None)
+    imagenNegativa = []#Array auxiliar que contendra la imagen negativa
+    for x in range(len(self.img)):# Recorrera cada cadena de la imagen Actual
+      str = "" #String auxiliar
+      for y in self.img[x]: # Recorrera cada carater de la cadena
+        str += self._invColor(y) #Convierte cada caracter a su inverso y lo concatena a str
+      imagenNegativa.append(str) # cada cadena invertida lo añade en imagenNegativa
+    return Picture(imagenNegativa)#Se retorna un objeto picture que contiene a la imagen negativa(en cadenas)
 
   def join(self, p):
     """ Devuelve una nueva figura poniendo la figura del argumento
