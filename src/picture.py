@@ -13,7 +13,13 @@ class Picture:
 
   def verticalMirror(self):
     """ Devuelve el espejo vertical de la imagen """
-    return Picture(None)
+    imagenActual = self.img
+    reflejoVertical = []
+    max = len(self.img) - 1
+    while max >= 0:
+      reflejoVertical.append(imagenActual[max])
+      max -= 1
+    return Picture(reflejoVertical)
 
   def horizontalMirror(self):
     """ Devuelve el espejo horizontal de la imagen """
@@ -24,7 +30,7 @@ class Picture:
     return Picture(None)
 
   def join(self, p):
-    """ Devuelve una nueva figura poniendo la figura del argumento 
+    """ Devuelve una nueva figura poniendo la figura del argumento
         al lado derecho de la figura actual """
     return Picture(None)
 
@@ -35,7 +41,7 @@ class Picture:
     """ Devuelve una nueva figura poniendo la figura p sobre la
         figura actual """
     return Picture(None)
-  
+
   def horizontalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual al costado
         la cantidad de veces que indique el valor de n """
@@ -44,9 +50,8 @@ class Picture:
   def verticalRepeat(self, n):
     return Picture(None)
 
-  #Extra: Sólo para realmente viciosos 
+  #Extra: Sólo para realmente viciosos
   def rotate(self):
     """Devuelve una figura rotada en 90 grados, puede ser en sentido horario
     o antihorario"""
     return Picture(None)
-
