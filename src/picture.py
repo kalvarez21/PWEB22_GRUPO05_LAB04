@@ -94,13 +94,34 @@ class Picture:
 
 
   def verticalRepeat(self, n):
+    """Devuelve una nueva figura repitiendo la figura actual debajo,
+       la cantidad de veces que indique el valor de n"""
     repetidaVertical = []
     for x in range(n):# Se hara n iteraciones
       repetidaVertical.extend(self.img) #Se almacenena todas las cadenas de la imagen actual en repetidaVertical
     return Picture(repetidaVertical)#Se retorna un objeto picture que contiene la imagen repetida n veces verticalmente
 
   #Extra: Sólo para realmente viciosos
-  def rotate(self):
-    """Devuelve una figura rotada en 90 grados, puede ser en sentido horario
-    o antihorario"""
-    return Picture(None)
+  """ Devuelve una figura rotada en 90 grados, puede ser en sentido horario
+      o antihorario """
+  def rotateAntihorario(self):
+    rotar = []
+    x = len(self.img) - 1
+    while x >= 0:
+      str = ""
+      for y in range(len(self.img)):
+        str += self.img[y][x]
+      rotar.append(str)
+      x -= 1
+    return Picture(rotar)
+
+  def rotateHorario(self):
+    rotar = []
+    for x in range(len(self.img)):
+      str = ""
+      y = len(self.img) - 1
+      while y >= 0:
+        str += self.img[y][x]
+        y -= 1
+      rotar.append(str)
+    return Picture(rotar)

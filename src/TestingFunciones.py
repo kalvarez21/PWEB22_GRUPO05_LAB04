@@ -7,4 +7,5 @@ from chessPictures import *
 #draw(knight.up(rock))
 #draw(square.under(knight)) #caballo sobre la casilla
 #draw(knight.horizontalRepeat(5))
-draw(knight.verticalRepeat(5))
+#draw(knight.verticalRepeat(5))
+draw(knight.rotateAntihorario().join(knight.rotateHorario()))
