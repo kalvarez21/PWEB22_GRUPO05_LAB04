@@ -64,12 +64,23 @@ class Picture:
     imagenMontada = []
     imagenMontada.extend(imagenArriba) #Añade todas las cadenas de imagenArriba a la variable imagenMontada
     imagenMontada.extend(imagenActual) #Añade todas las cadenas de imagenActual a la variable imagenMontada
-    return Picture(imagenMontada)#Se retorna un objeto picture que contiene a imagenArriba arriba de imagenActual 
+    return Picture(imagenMontada)#Se retorna un objeto picture que contiene a imagenArriba arriba de imagenActual
 
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la
         figura actual """
-    return Picture(None)
+    imagenActual = self.img
+    imagenSobre = p.img
+    resultado = []
+    for x in range(len(self.img)):#Establece el maximo valor de x
+      str = ""
+      for y in range(len(self.img[x])):#Recorre cada caracter de la cadena con indice x
+        if imagenSobre[x][y] != ' ': #Caso caracter diferente del vacio: almacena el caracter de imagenSobre en str
+          str += imagenSobre[x][y]
+        else: #Caso caracter vacio: almacena el caracter de imagenActual en str
+          str += imagenActual[x][y]
+      resultado.append(str)# almacena la cadena formada en resultado
+    return Picture(resultado)#Se retorna un objeto picture que contiene a imagenSobre sobre imagenActual
 
   def horizontalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual al costado

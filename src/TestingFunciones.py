@@ -4,4 +4,5 @@ from chessPictures import *
 #draw(knight.horizontalMirror())
 #draw(knight.negative())
 #draw(knight.join(rock))
-draw(knight.up(rock))
+#draw(knight.up(rock))
+draw(square.under(knight))
